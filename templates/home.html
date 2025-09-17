@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Evaluation Assistant</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .submit-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s ease;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        .description {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+        .description h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .description ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .description li {
+            margin-bottom: 5px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Team Evaluation Assistant</h1>
+
+        <div class="description">
+            <h3>How it works:</h3>
+            <ul>
+                <li>Set up your constant information once (name, email, milestone, week, team)</li>
+                <li>The system will automatically fill these fields for each evaluation</li>
+                <li>You'll review and fill each team member's specific details</li>
+                <li>Submit evaluations one by one with full control</li>
+            </ul>
+        </div>
+
+        <form method="post" action="/setup">
+            <div class="form-group">
+                <label for="my_name">Your Name (Last, First):</label>
+                <input type="text" id="my_name" name="my_name" required
+                       placeholder="Doe, John" value="Test, User">
+            </div>
+
+            <div class="form-group">
+                <label for="my_email">Your Email:</label>
+                <input type="email" id="my_email" name="my_email" required
+                       placeholder="your.email@university.edu" value="test@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="milestone">Milestone:</label>
+                <select id="milestone" name="milestone" required>
+                    <option value="Milestone 1" selected>Milestone 1</option>
+                    <option value="Milestone 2">Milestone 2</option>
+                    <option value="Milestone 3">Milestone 3</option>
+                    <option value="Milestone 4">Milestone 4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="week">Week:</label>
+                <select id="week" name="week" required>
+                    <option value="Week 1" selected>Week 1</option>
+                    <option value="Week 2">Week 2</option>
+                    <option value="Week 3">Week 3</option>
+                    <option value="Week 4">Week 4</option>
+                    <option value="Week 5">Week 5</option>
+                    <option value="Week 6">Week 6</option>
+                    <option value="Week 7">Week 7</option>
+                    <option value="Week 8">Week 8</option>
+                    <option value="Week 9">Week 9</option>
+                    <option value="Week 10">Week 10</option>
+                    <option value="Week 11">Week 11</option>
+                    <option value="Week 12">Week 12</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="my_team">Your Team:</label>
+                <select id="my_team" name="my_team" required>
+                    <option value="Team A" selected>Team A</option>
+                    <option value="Team B">Team B</option>
+                    <option value="Team C">Team C</option>
+                    <option value="Team D">Team D</option>
+                    <option value="Team E">Team E</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="form_url">Form URL:</label>
+                <input type="url" id="form_url" name="form_url" required
+                       value="https://docs.google.com/forms/d/e/1FAIpQLSdxaQ0Gs1dSUaTBhH7NBk11_U7J7suutd5UVTj1AGdp2dcuPA/viewform">
+            </div>
+
+            <button type="submit" class="submit-btn">Start Evaluations</button>
+        </form>
+    </div>
+</body>
+</html>
